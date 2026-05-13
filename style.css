@@ -1,0 +1,109 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+
+/* Герой-секция */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('приветствие.jpg');
+    background-size: cover; background-position: center;
+    height: 100vh; color: white; display: flex; flex-direction: column;
+}
+nav { display: flex; justify-content: space-between; padding: 20px 8%; align-items: center; }
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav ul li a { color: white; text-decoration: none; font-size: 14px; }
+.hero-content { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.hero-content h1 { font-size: 60px; margin: 10px 0; }
+.btn { padding: 10px 25px; border: 1px solid white; background: none; color: white; border-radius: 20px; cursor: pointer; }
+
+/* Текст */
+.about { padding: 60px 10%; text-align: center; }
+.about h3 { color: #777; font-weight: normal; margin-bottom: 10px; }
+.about h2 { font-size: 28px; margin-bottom: 20px; }
+.about p { color: #555; line-height: 1.6; }
+
+/* Карточки с эффектом увеличения */
+.cards { display: flex; justify-content: center; gap: 20px; padding: 20px; }
+.card img, .diamond-card img { 
+    transition: transform 0.3s ease; /* Плавность для карточек */
+    object-fit: cover; 
+}
+.card img { width: 300px; height: 200px; }
+.diamond-card img { width: 350px; height: 230px; }
+
+.card:hover img, .diamond-card:hover img {
+    transform: scale(1.05); /* Легкое увеличение карточек при наведении */
+}
+
+/* Расписание */
+.schedule-section {
+    padding: 50px 5%; 
+    text-align: center;
+}
+.table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.schedule-img {
+    width: 100%; 
+    max-width: 2300px; 
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Ромбы (Галерея) с эффектом зума */
+.gallery-section { padding: 80px 0; text-align: center; }
+.gallery-section h2 { margin-bottom: 60px; }
+.diamond-container { display: flex; justify-content: center; gap: 15px; }
+
+.diamond { 
+    width: 150px; 
+    height: 150px; 
+    overflow: hidden; 
+    transform: rotate(45deg); 
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.diamond img { 
+    width: 220px; 
+    height: 220px; 
+    object-fit: cover; 
+    /* Обязательно сохраняем начальный поворот и сдвиг */
+    transform: rotate(-45deg) translate(-40px, -40px); 
+    transition: transform 0.4s ease; /* Плавный зум */
+}
+
+/* Эффект при наведении на ромб */
+.diamond:hover img {
+    /* Добавляем scale(1.15) к существующим трансформациям */
+    transform: rotate(-45deg) translate(-40px, -40px) scale(1.15);
+}
+
+/* Футер */
+footer { 
+    background: #888; 
+    padding: 40px 0 20px; 
+    text-align: center; 
+}
+
+.footer-screen { 
+    /* Измени это значение, чтобы скрин стал больше */
+    max-width: 3000px; /* Было 400px, поставили 800px */
+    width: 100%; 
+    height: auto;
+    margin-bottom: 20px; 
+    
+    /* Можно добавить плавное появление или тень, если нужно */
+    transition: transform 0.3s ease;
+}
+
+/* Опционально: увеличение при наведении и на этот скрин */
+.footer-screen:hover {
+    transform: scale(1.02);
+}
+
+.copyright { 
+    color: white; 
+    font-size: 12px; 
+    opacity: 0.8; 
+}
